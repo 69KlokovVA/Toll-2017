@@ -41,14 +41,20 @@ public class BadThreads {
     }
  
     public static void main(String args[]) throws InterruptedException {
-
-        for (int i=0; i<10; i++) {
+        boolean fortanulo = true;
+        System.out.print("Если не казнят, то ... ");
+        for (int i=0; i<1000; i++) {
             CorrectorThread correctorThread = new CorrectorThread();
             message = "Казнить";
             correctorThread.start();
-            Thread.sleep(10);
-//            if (message.equalsIgnoreCase("Казнить"))
+            correctorThread.join();
+//            Thread.sleep(10);
+            if (message.equalsIgnoreCase("Казнить")) {
                 System.out.println(message);
+                fortanulo = false;
+            }
         }
+        if (fortanulo)
+            System.out.println(" помиловали!");
     }
 }
