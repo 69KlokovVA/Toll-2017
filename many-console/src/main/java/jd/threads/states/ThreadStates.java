@@ -18,7 +18,7 @@ public class ThreadStates {
         System.out.println("после запуска, до завершения => " + example.getState());
 
         //дожидаемся завершения
-        example.join();
+        example.join(10);
 
         System.out.println("после завершения => " + example.getState());
 

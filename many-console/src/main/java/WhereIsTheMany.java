@@ -32,7 +32,7 @@ public class WhereIsTheMany {
         //начинаем ждать завершения всех нитей
         for (int i = 0; i < threads.length; i++) {
             Thread thread = threads[i];
-            thread.join();
+            thread.join(15);
         }
         //если мы здесь то значит все нити завершили выполнение, выводим результат
         System.out.println("account = [" + account + "]" + " must be = [" + transNum*threadNum + "]");

@@ -15,7 +15,7 @@ public class TwoWaysCreating {
         extending.start();
 
         //дожидаемся завершения
-        extending.join();
+        extending.join(11);
 
         //почувствуйте разницу - run() не запускает нить!!!, по-этому название нити тоже 'main'
         extending.run();

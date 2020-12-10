@@ -21,7 +21,7 @@ public class ThreadStop {
         //stopped.join();
 
         stopped.setNeedStop(true);
-        stopped.join();
+        stopped.join(10);
 
         System.out.println("после завершения => " + stopped.getState());
 
@@ -42,7 +42,7 @@ public class ThreadStop {
 //        stopped2.setNeedStop(true);
         //останавливаем через stop - но это не рекомендуется, объясняется в самом методе, лучше через переменную
         stopped2.stop();
-        stopped2.join();
+        stopped2.join(100);
 
         System.out.println("после завершения stopped2 => " + stopped2.getState());
 

@@ -20,7 +20,7 @@ public class Game {
         BlockingDeque<String> whiteTurns = new LinkedBlockingDeque<>(1);
         BlockingDeque<String> blackTurns = new LinkedBlockingDeque<>(1);
 
-        // Инициализируем игроков, выходная очередь одного является входной очередью другого, и белые всегда ходят первыми
+        // инициализируем игроков, выходная очередь одного является входной очередью другого, и белые всегда ходят первыми
         Player white = new Player(whiteTurns, blackTurns, gambit[0][0]);
         Player black = new Player(blackTurns, whiteTurns);
         white.start();
